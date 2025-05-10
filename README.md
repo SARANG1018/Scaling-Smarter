@@ -66,17 +66,29 @@ prompt = "<s>[INST] Tell me a pirate story with a treasure map and an island. [/
 ## Results and Observations
 
 ### 🔹 Stage 1: Variant Benchmarking
+
+Before benchmarking, each variant was run through a standardized pipeline that generated the model response, computed perplexity, profiled CUDA kernels, and stored the metrics to a `.json` file.
+
+**Example Output Snapshot (Quantized 4-bit model with FlashAttention):**
+
+- **Response Perplexity**: 195.97  
+- **Self CUDA Time**: 6.648s  
+- **Top Kernels**: `kgemm_4bit_inference`, `MatMul4Bit`, `aten::mm`
+
+![Profiler Output for 4-bit Quantized Inference](images/profiler_snapshot_4bit.png)  
+*Profiler output for 4-bit quantized inference*
+
+---
+
 - **Lowest Perplexity**: 4-Bit Quantized Mistral Model (196.42)
 - **Fastest CUDA Inference Time**: 4-Bit Quantized Mistral Model (6.6 ms)
 - **Visualizations**:
 
-![Perplexity Comparison](images/perplexity_comparision_stage1.png)
+![Perplexity Comparison](images/perplexity_comparision_stage1.png)  
+`perplexity_comparision_stage1.png`
 
-  - `perplexity_comparision_stage1.png`
-
-![CUDA vs CPU Inference Time](images/cuda_vrs_cpu_model_stage1.png)
-
-  - `cuda_vrs_cpu_model_stage1.png`
+![CUDA vs CPU Inference Time](images/cuda_vrs_cpu_model_stage1.png)  
+`cuda_vrs_cpu_model_stage1.png`
 
 ### 🔹 Stage 2: Kernel Profiling
 - **Best CUDA Kernel Efficiency**: 4-Bit Quantized Mistral Model (0.0049 ms/op)
