@@ -1,0 +1,14 @@
+{
+  "Original": {
+    "model_inference": 14.324463570999999,
+    "void magma_sgemmEx_kernel<float, __nv_bfloat16, __nv_bfloat16, true, false, 6, 4, 6, 3, 4>(int, int, int, Tensor, int, Tensor, int, Tensor, int, Tensor, int, int, int, float const*, float const*, float, float, int, cublasLtEpilogue_t, int, void const*, long)": 0.006312646000000008
+  },
+  "4-Bit Quantized Mistral Model": {
+    "model_inference": 14.916467312999998,
+    "void magma_sgemmEx_kernel<float, __nv_bfloat16, __nv_bfloat16, true, false, 6, 4, 6, 3, 4>(int, int, int, Tensor, int, Tensor, int, Tensor, int, Tensor, int, int, int, float const*, float const*, float, float, int, cublasLtEpilogue_t, int, void const*, long)": 0.004945353000000003
+  },
+  "SDPA+4-Bit Quantized Mistral Model": {
+    "model_inference": 16.85264016,
+    "void magma_sgemmEx_kernel<float, __nv_bfloat16, __nv_bfloat16, true, false, 6, 4, 6, 3, 4>(int, int, int, Tensor, int, Tensor, int, Tensor, int, Tensor, int, int, int, float const*, float const*, float, float, int, cublasLtEpilogue_t, int, void const*, long)": 0.0063281399999999995
+  }
+}
