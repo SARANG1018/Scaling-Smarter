@@ -35,7 +35,8 @@ Five variants were created and evaluated. The best-performing variant was fine-t
 ├── images/                                       # Includes all plots used in report
 ├── cuda_op_times_inference.json                  # Raw CUDA profiler dump
 ├── perplexities_all.json                         # Precomputed perplexity scores
-├── README.md                                     # This file
+├── README.md                                     # current file
+├── treasure_island.txt                           # test file
 ```
 
 ---
